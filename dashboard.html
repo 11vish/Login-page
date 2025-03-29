@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Social Butterfly</title>
+    <style>
+        /* Background */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: url("image/img.jpg") no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Container */
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(12px);
+            width: 500px;
+            box-shadow: 0 8px 16px rgba(255, 192, 203, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Title */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Motivational Quote */
+        .quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 20px 0;
+            color: #ffebf0;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            width: 250px;
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome, <span id="username"></span>! 💖</h1>
+        <p class="quote" id="quote">"She believed she could, so she did."</p>
+        <button class="btn" onclick="generateQuote()">New Quote</button>
+        <button class="btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Get username from localStorage
+        document.getElementById("username").innerText = localStorage.getItem("loggedInUser") || "Guest";
+
+        // Array of motivational quotes
+        const quotes = [
+            "You are enough just as you are.",
+            "Believe in yourself, and the rest will fall into place.",
+            "You are stronger than you think.",
+            "Radiate confidence, and the world will shine with you.",
+            "Dream big, work hard, stay focused, and surround yourself with good people."
+        ];
+
+        // Function to generate new quote
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").innerText = quotes[randomIndex];
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            alert("Logged out successfully!");
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>

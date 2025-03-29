@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Butterfly</title>
+    <style>
+        /* Background */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: url("image/img.jpg") no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            text-align: center;
+            padding-right: 10%;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Container */
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(12px);
+            width: 400px;
+            box-shadow: 0 8px 16px rgba(255, 192, 203, 0.5);
+            animation: slideInRight 1.5s ease-in-out;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            width: 220px;
+            margin: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            right: 5%;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>✨ Social Butterfly ✨</h1>
+
+    <div class="container">
+        <p>Are you a new or existing user?</p>
+        <button class="btn" onclick="window.location.href='signup.html'">New User - Sign Up</button>
+        <button class="btn" onclick="window.location.href='login.html'">Existing User - Login</button>
+    </div>
+
+    <footer>
+        © 2025 Social Butterfly | Empowering Women ✨
+    </footer>
+
+</body>
+</html>
